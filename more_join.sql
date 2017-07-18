@@ -125,7 +125,7 @@ SELECT name
 */
 SELECT title, COUNT(actorid)
   FROM movie JOIN casting ON movie.id = movieid
-                         JOIN actor     ON actorid = actor.id
+             JOIN actor   ON actorid = actor.id
  WHERE yr = 1978
  GROUP BY title
  ORDER BY COUNT(actorid) DESC, title
@@ -135,7 +135,7 @@ SELECT title, COUNT(actorid)
 */
 SELECT z.name
   FROM casting x JOIN casting y ON x.movieid = y.movieid
-                JOIN actor z   ON x.actorid = z.id
-                JOIN actor w   ON y.actorid = w.id
+                 JOIN actor z   ON x.actorid = z.id
+                 JOIN actor w   ON y.actorid = w.id
  WHERE w.name = 'Art Garfunkel'
    AND z.name != 'Art Garfunkel'
